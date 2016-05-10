@@ -11,7 +11,7 @@
                      'bg-danger': ['16','26','36'].indexOf(admin.skin) >= 0,
                     }">
         <a href="#/">
-            <span class="logo-icon glyphicon glyphicon-leaf"></span>
+            <span class="logo-icon glyphicon glyphicon-flash"></span>
             <span class="logo-text">{{main.brand}}</span>
         </a>
     </div>
@@ -242,61 +242,6 @@
                 </div>
 
             </li>
-            <li class="search-box visible-md visible-lg">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="ti-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Search...">
-                </div>
-            </li>
-            <li class="dropdown" uib-dropdown is-open="status.isopenEmail">
-                <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
-                    <i class="ti-email"></i>
-                    <span class="badge badge-danger">3</span>
-                </a>
-                <div class="dropdown-menu with-arrow panel panel-default dropdown-menu-scaleIn">
-                    <div class="panel-heading">
-                        You have 3 mails.
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-warning"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Lisa sent you a mail</span>
-                                    <span class="text-muted block">2min ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-info"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Jane sent you a mail</span>
-                                    <span class="text-muted">3 hours ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="javascript:;" class="media">
-                                <span class="media-left media-icon">
-                                    <span class="btn-icon btn-icon-round btn-success"><i class="ti-email"></i></span>
-                                </span>
-                                <div class="media-body">
-                                    <span class="block">Lynda sent you a mail</span>
-                                    <span class="text-muted">9 hours ago</span>
-                                </div>
-                            </a>
-                        </li>                       
-                    </ul>
-                    <div class="panel-footer">
-                        <a href="#/mail/inbox">Show all mails.</a>
-                    </div>
-                </div>
-            </li>
             <li class="dropdown" uib-dropdown is-open="status.isopenBell">
                 <a href="javascript:;" class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown">
                     <i class="ti-bell"></i>
@@ -367,7 +312,7 @@
                     <li>
                         <a href="#/app/tasks">
                             <i class="ti-check-box"></i>
-                            <span data-translate="MY_TASKS"></span>
+                            <span data-translate="MY_RECENT_ACTIVITY"></span>
                         </a>
                     </li>
                     <li>
@@ -401,6 +346,8 @@
                         <a href="javascript:;" data-ng-click="setLang('日本語')"><div class="flag flags-japan"></div> 日本語</a></li>
                     <li data-ng-show="lang !== 'Русский язык' ">
                         <a href="javascript:;" data-ng-click="setLang('Русский язык')"><div class="flag flags-russia"></div> Русский язык</a></li>
+                    <li data-ng-show="lang !== 'Čeština' ">
+                        <a href="javascript:;" data-ng-click="setLang('Čeština')"><div class="flag flags-czechia"></div> Čeština</a></li>
                 </ul>
             </li>
         </ul>

@@ -56,6 +56,9 @@
                     case 'Русский язык':
                         $translate.use('ru');
                         break;
+                    case 'Čeština':
+                        $translate.use('cs');
+                        break;
                 }
                 return $scope.lang = lang;
             };
@@ -81,6 +84,9 @@
                         break;
                     case 'Русский язык':
                         return 'flags-russia';
+                        break;
+                    case 'Čeština':
+                        return 'flags-czechia';
                         break;
                 }
             };
