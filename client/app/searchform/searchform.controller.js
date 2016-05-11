@@ -1,12 +1,12 @@
 (function () {
     'use strict';
 
-    var app= angular.module('app')
+    var searchform= angular.module('app')
         .controller('SearchFormCtrl', ['$scope', SearchFormCtrl])
-        .controller('DatepickerDemoCtrl', ['$scope', DatepickerDemoCtrl])
+        .controller('DatepickerCtrl', ['$scope', DatepickerDemoCtrl])
     ;
 
-    app.directive('myPreciousSlider', [function() {
+    searchform.directive('pnSlider', [function() {
         return {
             restrict: 'A', // only activate on element attribute
             require: '?ngModel', // get a hold of NgModelController

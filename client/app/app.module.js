@@ -24,6 +24,7 @@
         'app.ui.form.validation',
         'app.page',
         'app.table',
+        'app.table',
         'app.task'
     ]);
 

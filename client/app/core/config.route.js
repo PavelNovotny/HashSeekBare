@@ -6,7 +6,7 @@
             var routes, setRoutes;
 
             routes = [
-                'dashboard','searchform/searchform',
+                'dashboard','searchform',
                 'ui/typography', 'ui/buttons', 'ui/icons', 'ui/grids', 'ui/widgets', 'ui/components', 'ui/boxes', 'ui/timeline', 'ui/nested-lists', 'ui/pricing-tables', 'ui/maps',
                 'table/static', 'table/dynamic', 'table/responsive',
                 'form/elements', 'form/layouts', 'form/validation', 'form/wizard',
@@ -30,8 +30,8 @@
             });
 
             $routeProvider
-                .when('/', {redirectTo: '/dashboard'})
-                .when('/dashboard', {templateUrl: 'app/dashboard/dashboard.html'})
+                .when('/', {redirectTo: '/searchform'})
+                .when('/searchform', {templateUrl: 'app/searchform/searchform.html'})
                 .when('/404', {templateUrl: 'app/page/404.html'})
                 .otherwise({ redirectTo: '/404'});
 
