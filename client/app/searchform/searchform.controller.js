@@ -3,7 +3,7 @@
 
     var searchform= angular.module('app')
         .controller('SearchFormCtrl', ['$scope', SearchFormCtrl])
-        .controller('DatepickerCtrl', ['$scope', DatepickerDemoCtrl])
+        .controller('DatepickerCtrl', ['$scope', DatepickerCtrl])
     ;
 
     searchform.directive('pnSlider', [function() {
@@ -94,7 +94,7 @@
 
     }
 
-    function DatepickerDemoCtrl($scope) {
+    function DatepickerCtrl($scope) {
         $scope.today = function() {
             return $scope.dt = new Date();
         };
