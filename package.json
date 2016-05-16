@@ -36,9 +36,15 @@
     "etag": "^1.7.0",
     "ms": "^0.7.1",
     "on-finished": "^2.3.0",
-    "statuses": "^1.2.1"   
+    "statuses": "^1.2.1"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "path": "^0.12.7",
+    "request": "^2.72.0"
   }
 }
