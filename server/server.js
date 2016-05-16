@@ -11,16 +11,23 @@ var request = require("request");
 
 app.use(cors());
 
+//dev
 app.get("/app", function(req, res) {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
-app.use(express.static(path.join(__dirname, '../dist')));
+app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../.tmp')));
 
+//production
 // app.get("/app", function(req, res) {
-//     res.sendFile(path.join(__dirname, '../client', 'index.html'));
+//     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 // });
-// app.use(express.static(path.join(__dirname, '../client')));
-//app.use(express.static(path.join(__dirname, '../.tmp')));
+// app.use(express.static(path.join(__dirname, '../dist')));
+
+
+app.get('/api/search', function(req, res) {
+    res.json({pozdrav:'ahoj', pozdrav:'čau'});
+});
 
 //proxy that does not wait for response finish (feeds browser immediatelly)
 var proxied = ['/processCommand','/download','/hashSeek','/authenticate','/result','/sessions','/logFilesInfo'];

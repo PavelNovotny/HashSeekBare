@@ -42,7 +42,7 @@
                             <input type="text"
                                    class="form-control"
                                    uib-datepicker-popup="{{format}}"
-                                   ng-model="dt"
+                                   ng-model="Data.dt"
                                    is-open="opened"
                                    min="minDate"
                                    max="'2015-06-22'"
@@ -99,11 +99,11 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <label class="ui-checkbox"><input name="radio1" type="checkbox"
+                                <label class="ui-checkbox"><input name="test" type="checkbox"
                                                                   value="test"><span>Test</span></label>
-                                <label class="ui-checkbox"><input name="radio1" type="checkbox" value="predprod"
+                                <label class="ui-checkbox"><input name="predprod" type="checkbox" value="predprod"
                                                                   checked><span>Predprod</span></label>
-                                <label class="ui-checkbox"><input name="radio1" type="checkbox"
+                                <label class="ui-checkbox"><input name="prod" type="checkbox"
                                                                   value="prod"><span>Prod</span></label>
                             </div>
                         </div>
@@ -138,10 +138,14 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="col-sm-2">
-                                <button type="submit" class="btn btn-success btn-w-md">{{'SEARCH' | translate}}</button>
+                                <button type="submit" class="btn btn-success btn-w-md" ng-click="search()">{{'SEARCH' | translate}}</button>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    {{searchResult}}
                 </div>
 
             </form>

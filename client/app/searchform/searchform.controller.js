@@ -2,9 +2,14 @@
     'use strict';
 
     var searchform= angular.module('app')
-        .controller('SearchFormCtrl', ['$scope', SearchFormCtrl])
-        .controller('DatepickerCtrl', ['$scope', DatepickerCtrl])
+        .controller('SearchFormCtrl', ['$scope', '$http', '$httpParamSerializer', 'Data', SearchFormCtrl])
+        .controller('DatepickerCtrl', ['$scope',  'Data', DatepickerCtrl])
     ;
+
+    searchform.factory('Data', function () {
+        return { dt: null };
+    });
+
 
     searchform.directive('pnSlider', [function() {
         return {
@@ -43,7 +48,8 @@
         };
     }]);
 
-    function SearchFormCtrl($scope) {
+    function SearchFormCtrl($scope, $http, $httpParamSerializer, Data) {
+
         $scope.seekStrings = [{id: 'seekString0', first: {id:'seekString00'}
             ,second: {id:'seekString10'}
             ,third: {id:'seekString20'}}];
@@ -92,11 +98,31 @@
             }
         });
 
+        $scope.search = function() {
+            var query = $httpParamSerializer({
+                seekStrings: $scope.seekStrings,
+                searchDays: $scope.searchDays.daysTotal,
+                date: Data.dt
+            });
+            $http.get('/api/search?'+query)
+                .success(function (data) {
+                    $scope.searchResult = data;
+                    console.log(data);
+                })
+                .error(function (data) {
+                    console.log('Error: ' + data);
+                });
+        };
+
+
     }
 
-    function DatepickerCtrl($scope) {
+    function DatepickerCtrl($scope, Data) {
+
+        $scope.Data = Data;
+
         $scope.today = function() {
-            return $scope.dt = new Date();
+            return $scope.Data.dt = new Date();
         };
 
         $scope.today();
@@ -108,7 +134,7 @@
         };
 
         $scope.clear = function() {
-            $scope.dt = null;
+            $scope.Data.dt = null;
         };
 
         $scope.disabled = function(date, mode) {
