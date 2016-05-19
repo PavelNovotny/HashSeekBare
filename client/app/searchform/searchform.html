@@ -1,0 +1,156 @@
+<div class="page" data-ng-controller="SearchFormCtrl">
+
+
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span><span
+                data-translate="SEARCH_TITLE"></span></strong></div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form">
+
+                <div class="row">
+                    <div class="col-md-12 form-group" data-ng-repeat="seekString in seekStrings">
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-change="changed($index)"
+                                   ng-model="seekString.first.name"
+                                   placeholder="{{ 'SEEKSTRING_PLACEHOLDER_OR' | translate }}">
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" ng-change="changed($index)"
+                                   ng-model="seekString.second.name"
+                                   placeholder="{{ 'SEEKSTRING_PLACEHOLDER_AND' | translate }}">
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-change="changed($index)"
+                                       ng-model="seekString.third.name"
+                                       placeholder="{{ 'SEEKSTRING_PLACEHOLDER_AND' | translate }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-0">
+                            <a href="javascript:;" data-ng-click="removeSeekStringsRow($index)"
+                               class="btn-icon-lined btn-icon-round btn-info"><span
+                                    class="glyphicon glyphicon-trash"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider divider-dashed divider-lg pull-in"></div>
+
+
+                <div class="row" data-ng-controller="DatepickerCtrl">
+                    <div class="col-md-3">
+                        <div class="input-group ui-datepicker">
+                            <input type="text"
+                                   class="form-control"
+                                   uib-datepicker-popup="{{format}}"
+                                   ng-model="Data.dt"
+                                   is-open="opened"
+                                   min="minDate"
+                                   max="'2015-06-22'"
+                                   datepicker-options="dateOptions"
+                                   date-disabled="disabled(date, mode)"
+                                   ng-required="true"
+                                   close-text="Close">
+                                <span class="input-group-addon" ng-click="open($event)"><i
+                                        class="ti-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-sm btn-info" ng-click="today()">{{ 'TODAY' | translate }}</button>
+                        <button class="btn btn-sm btn-danger" ng-click="clear()">{{ 'CLEAR' | translate }}</button>
+                    </div>
+                    <div class="col-md-2">
+                        <p>
+                            {{ 'COUNT_DAYS' | translate }}:
+                            <input type="text" size="2" maxlength="2" ng-model="searchDays.daysTotal"> </input>
+                        </p>
+                        <input type="hidden" ng-model="searchDays.days"> </input>
+                        <input type="hidden" ng-model="searchDays.daysTen"> </input>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text"
+                               ui-range-slider
+                               pn-slider
+                               data-slider-min="0"
+                               data-slider-max="90"
+                               data-slider-step="10"
+                               data-slider-orientation="horizontal"
+                               data-slider-value="0"
+                               data-slider-selection="before"
+                               data-slider-tooltip="show"
+                               ng-model="searchDays.daysTen"
+                               data-slider-handle="round"/>
+                        <input type="text"
+                               ui-range-slider
+                               pn-slider
+                               data-slider-min="0"
+                               data-slider-max="9"
+                               data-slider-step="1"
+                               data-slider-orientation="horizontal"
+                               data-slider-value="1"
+                               data-slider-selection="before"
+                               data-slider-tooltip="show"
+                               ng-model="searchDays.days"
+                               data-slider-handle="round"/>
+                    </div>
+                </div>
+
+                <div class="divider divider-dashed divider-lg pull-in"></div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <label class="ui-checkbox"><input name="test" type="checkbox"
+                                                                  value="test"><span>Test</span></label>
+                                <label class="ui-checkbox"><input name="predprod" type="checkbox" value="predprod"
+                                                                  checked><span>Predprod</span></label>
+                                <label class="ui-checkbox"><input name="prod" type="checkbox"
+                                                                  value="prod"><span>Prod</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <label class="ui-checkbox"><input name="audit" type="checkbox" value="option1"
+                                                                  checked><span>Audit</span></label>
+                                <label class="ui-checkbox"><input name="time" type="checkbox"
+                                                                  value="option2"><span>Time</span></label>
+                                <label class="ui-checkbox"><input name="b2b" type="checkbox"
+                                                                  value="option3"><span>B2B</span></label>
+                                <label class="ui-checkbox"><input name="bpm" type="checkbox"
+                                                                  value="option4"><span>BPM</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <label class="ui-checkbox"><input name="checkbox1" type="checkbox"
+                                                                  value="option5"><span>{{'LAST_LOGS' | translate}}</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider divider-dashed divider-lg pull-in"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <button type="submit" class="btn btn-success btn-w-md" ng-click="search()">{{'SEARCH' | translate}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {{searchResult}}
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+</div>
