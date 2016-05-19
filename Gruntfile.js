@@ -299,8 +299,8 @@
             },
             copy: {
                 dist: {
-                    files: [
-                        {
+                    files: [ 
+                        {   
                             expand: true,
                             dot: true,
                             cwd: "<%= yeoman.app %>",
@@ -336,6 +336,7 @@
                             dest: "<%= yeoman.serverdist %>",
                             src: ["*"]
                         }, {
+                            options :{mode:true},
                             expand: true,
                             cwd: "./",
                             dest: "<%= yeoman.rootdist %>",
