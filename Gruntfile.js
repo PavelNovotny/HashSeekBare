@@ -23,7 +23,7 @@
             app: "client",
             dist: "../deploy/client",
             serverdist: "../deploy/server",
-            rootdist: "../",
+            rootdist: "../deploy",
             docs: "documentation",
             landing: "landing"
         };
@@ -335,6 +335,11 @@
                             cwd: "server",
                             dest: "<%= yeoman.serverdist %>",
                             src: ["*"]
+                        }, {
+                            expand: true,
+                            cwd: "./",
+                            dest: "<%= yeoman.rootdist %>",
+                            src: ["*.sh"]
                         }
                     ]
                 },
