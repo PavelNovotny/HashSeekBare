@@ -23,6 +23,7 @@
             app: "client",
             dist: "../deploy/client",
             serverdist: "../deploy/server",
+            rootdist: "../",
             docs: "documentation",
             landing: "landing"
         };
@@ -126,7 +127,7 @@
                     files: [
                         {
                             dot: true,
-                            src: [".tmp", "<%= yeoman.dist %>/*", "<%= yeoman.serverdist %>/*","!<%= yeoman.dist %>/.git*"]
+                            src: [".tmp", "<%= yeoman.rootdist %>/stop-server.sh","<%= yeoman.rootdist %>/start-server.sh","<%= yeoman.dist %>/*", "<%= yeoman.serverdist %>/*","!<%= yeoman.dist %>/.git*"]
                         }
                     ]
                 },
