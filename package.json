@@ -1,6 +1,7 @@
 {
-  "name": "slim",
-  "version": "3.0.0",
+  "name": "O2-util-portal",
+  "version": "0.0.1",
+  "author":"Pavel Novotný",
   "devDependencies": {
     "connect-livereload": "~0.5.2",
     "grunt": "~0.4.5",

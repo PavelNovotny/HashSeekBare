@@ -1,0 +1,4 @@
+{
+"proxied-site": "http://localhost:7003",
+"listen-port": 7002
+}
