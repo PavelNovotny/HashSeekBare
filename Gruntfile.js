@@ -340,7 +340,7 @@
                             expand: true,
                             cwd: "./",
                             dest: "<%= yeoman.rootdist %>",
-                            src: ["*.sh"]
+                            src: ["*.sh","*.json"]
                         }
                     ]
                 },
