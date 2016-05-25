@@ -1,4 +1,20 @@
 {
-"proxied-site": "http://lxcipppt401.ux.to2cz.cz:7002",
-"listen-port": 8000
+  "proxied-site": "http://lxcipppt401.ux.to2cz.cz:7002",
+  "listen-port": 8000,
+  "files" : {
+    "test" : {
+      "data" : {
+        "audit" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs",
+        "time" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs",
+        "b2b" : "",
+        "bpm" : ""
+      },
+      "hash" : {
+        "audit" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash",
+        "time" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash",
+        "b2b" : "",
+        "bpm" : ""
+      }
+    }
+  }
 }

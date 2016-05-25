@@ -27,6 +27,10 @@ if (nconf.get('env') ==='devel') { //only in development environment
     app.use(express.static(path.join(__dirname, '../.tmp')));
 }
 
+app.get('/api/search', function(req, res) {
+    res.json({pozdrav:'ahoj', pozdrav1:'čau'});
+});
+
 //proxy to the old application
 var proxied = ['/processCommand','/download','/hashSeek','/authenticate','/result','/sessions','/logFilesInfo'];
 
