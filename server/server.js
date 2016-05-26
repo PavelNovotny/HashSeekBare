@@ -9,6 +9,7 @@ var cors = require("cors");
 var app = express();
 var request = require("request");
 var nconf = require('nconf');
+var search = require('./search');
 
 nconf.argv()
     .env()
@@ -28,7 +29,7 @@ if (nconf.get('env') ==='devel') { //only in development environment
 }
 
 app.get('/api/search', function(req, res) {
-    res.json({pozdrav:'ahoj', pozdrav1:'čau'});
+    search.search(req, res, nconf);
 });
 
 //proxy to the old application

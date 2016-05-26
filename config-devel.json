@@ -3,17 +3,21 @@
   "listen-port": 8000,
   "files" : {
     "test" : {
-      "data" : {
-        "audit" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs",
-        "time" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs",
-        "b2b" : "",
-        "bpm" : ""
+      "audit" : {
+        "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
+        "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
       },
-      "hash" : {
-        "audit" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash",
-        "time" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash",
-        "b2b" : "",
-        "bpm" : ""
+      "time" : {
+        "data" : "",
+        "hash" : ""
+      },
+      "b2b" : {
+        "data" : "",
+        "hash" : ""
+      },
+      "bpm" : {
+        "data" : "",
+        "hash" : ""
       }
     }
   }
