@@ -1,4 +1,24 @@
 {
-"proxied-site": "http://lxcipppt401.ux.to2cz.cz:7002",
-"listen-port": 8000
+  "proxied-site": "http://lxcipppt401.ux.to2cz.cz:7002",
+  "listen-port": 8000,
+  "files" : {
+    "test" : {
+      "audit" : {
+        "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
+        "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
+      },
+      "time" : {
+        "data" : "",
+        "hash" : ""
+      },
+      "b2b" : {
+        "data" : "",
+        "hash" : ""
+      },
+      "bpm" : {
+        "data" : "",
+        "hash" : ""
+      }
+    }
+  }
 }
