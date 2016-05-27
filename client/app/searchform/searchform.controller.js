@@ -50,20 +50,36 @@
 
     function SearchFormCtrl($scope, $http, $httpParamSerializer, Data) {
 
-        $scope.seekStrings = [{id: 'seekString0', first: {id:'seekString00'}
-            ,second: {id:'seekString10'}
-            ,third: {id:'seekString20'}}];
+        $scope.seekStrings = [['', '', '']];
+
+        $scope.searchDays={
+            days:1,
+            daysTen:0,
+            daysTotal:1
+        };
+
+        $scope.env={
+            test:false,
+            predprod:true,
+            prod: false
+        };
+
+        $scope.logs={
+            audit: true,
+            time: false,
+            b2b:false,
+            bpm: false
+        };
+        $scope.lastlogs = false;
+
 
         $scope.changed = function(index) {
-            if ($scope.seekStrings[index].first.name
-                || $scope.seekStrings[index].second.name
-                || $scope.seekStrings[index].third.name) {
+            if ($scope.seekStrings[index][0]
+                || $scope.seekStrings[index][1]
+                || $scope.seekStrings[index][2]) {
                 if (index === $scope.seekStrings.length-1) {
                     var newItemNo = $scope.seekStrings.length;
-                    $scope.seekStrings.push({id: 'seekString'+newItemNo
-                        ,first: {id:'seekString0'+newItemNo}
-                        ,second: {id:'seekString1'+newItemNo}
-                        ,third: {id:'seekString2'+newItemNo}});
+                    $scope.seekStrings.push(['', '', '']);
                 }
             } else {
                 $scope.seekStrings.splice(index,1);
@@ -74,12 +90,6 @@
             if ($scope.seekStrings.length > 1) {
                 $scope.seekStrings.splice(index,1);
             }
-        };
-
-        $scope.searchDays={
-            days:1,
-            daysTen:0,
-            daysTotal:1
         };
 
         $scope.$watch(function() {
@@ -101,8 +111,11 @@
         $scope.search = function() {
             var query = $httpParamSerializer({
                 seekStrings: $scope.seekStrings,
+                date: Data.dt,
                 searchDays: $scope.searchDays.daysTotal,
-                date: Data.dt
+                env : $scope.env,
+                logs : $scope.logs,
+                last : $scope.lastlogs
             });
             $http.get('/api/search?'+query)
                 .success(function (data) {

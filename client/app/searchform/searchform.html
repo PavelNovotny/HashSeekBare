@@ -11,18 +11,18 @@
                     <div class="col-md-12 form-group" data-ng-repeat="seekString in seekStrings">
                         <div class="col-sm-4">
                             <input type="text" class="form-control" ng-change="changed($index)"
-                                   ng-model="seekString.first.name"
+                                   ng-model="seekString[0]"
                                    placeholder="{{ 'SEEKSTRING_PLACEHOLDER_OR' | translate }}">
                         </div>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" ng-change="changed($index)"
-                                   ng-model="seekString.second.name"
+                                   ng-model="seekString[1]"
                                    placeholder="{{ 'SEEKSTRING_PLACEHOLDER_AND' | translate }}">
                         </div>
                         <div class="col-sm-3">
                             <div class="input-group">
                                 <input type="text" class="form-control" ng-change="changed($index)"
-                                       ng-model="seekString.third.name"
+                                       ng-model="seekString[2]"
                                        placeholder="{{ 'SEEKSTRING_PLACEHOLDER_AND' | translate }}">
                             </div>
                         </div>
@@ -100,33 +100,33 @@
                         <div class="form-group">
                             <div class="col-sm-10">
                                 <label class="ui-checkbox"><input name="test" type="checkbox"
-                                                                  value="test"><span>Test</span></label>
-                                <label class="ui-checkbox"><input name="predprod" type="checkbox" value="predprod"
-                                                                  checked><span>Predprod</span></label>
+                                                                 ng-model="env.test"><span>Test</span></label>
+                                <label class="ui-checkbox"><input name="predprod" type="checkbox"
+                                                                 ng-model="env.predprod"><span>Predprod</span></label>
                                 <label class="ui-checkbox"><input name="prod" type="checkbox"
-                                                                  value="prod"><span>Prod</span></label>
+                                                                 ng-model="env.prod"><span>Prod</span></label>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-2">
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <label class="ui-checkbox"><input name="audit" type="checkbox" value="option1"
-                                                                  checked><span>Audit</span></label>
+                                <label class="ui-checkbox"><input name="audit" type="checkbox"
+                                                                  ng-model="logs.audit"><span>Audit</span></label>
                                 <label class="ui-checkbox"><input name="time" type="checkbox"
-                                                                  value="option2"><span>Time</span></label>
+                                                                  ng-model="logs.time"><span>Time</span></label>
                                 <label class="ui-checkbox"><input name="b2b" type="checkbox"
-                                                                  value="option3"><span>B2B</span></label>
+                                                                  ng-model="logs.b2b"><span>B2B</span></label>
                                 <label class="ui-checkbox"><input name="bpm" type="checkbox"
-                                                                  value="option4"><span>BPM</span></label>
+                                                                  ng-model="logs.bpm"><span>BPM</span></label>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <label class="ui-checkbox"><input name="checkbox1" type="checkbox"
-                                                                  value="option5"><span>{{'LAST_LOGS' | translate}}</span></label>
+                                <label class="ui-checkbox"><input name="lastlogs" type="checkbox"
+                                                                  ng-model="lastlogs"><span>{{'LAST_LOGS' | translate}}</span></label>
                             </div>
                         </div>
                     </div>
