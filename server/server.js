@@ -11,12 +11,12 @@ var request = require("request");
 var nconf = require('nconf');
 var search = require('./search');
 
+app.use(cors());
+
 nconf.argv()
     .env()
     .defaults({ env : 'production' })
     .file({ file: 'config-'+nconf.get('env')+'.json' });
-
-app.use(cors());
 
 //both dev and prod
 app.get("/app", function(req, res) {
