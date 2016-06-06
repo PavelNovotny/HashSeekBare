@@ -99,8 +99,8 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <div class="col-sm-10">
-                                <label class="ui-checkbox"><input name="test" type="checkbox"
-                                                                 ng-model="env.test"><span>Test</span></label>
+                                <label class="ui-checkbox"><input name="systest" type="checkbox"
+                                                                 ng-model="env.systest"><span>Test</span></label>
                                 <label class="ui-checkbox"><input name="predprod" type="checkbox"
                                                                  ng-model="env.predprod"><span>Predprod</span></label>
                                 <label class="ui-checkbox"><input name="prod" type="checkbox"
@@ -115,10 +115,18 @@
                                                                   ng-model="logs.audit"><span>Audit</span></label>
                                 <label class="ui-checkbox"><input name="time" type="checkbox"
                                                                   ng-model="logs.time"><span>Time</span></label>
-                                <label class="ui-checkbox"><input name="b2b" type="checkbox"
-                                                                  ng-model="logs.b2b"><span>B2B</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <label class="ui-checkbox"><input name="esb" type="checkbox"
+                                                                  ng-model="servers.esb"><span>CIP-ESB</span></label>
                                 <label class="ui-checkbox"><input name="bpm" type="checkbox"
-                                                                  ng-model="logs.bpm"><span>BPM</span></label>
+                                                                  ng-model="servers.bpm"><span>CIP-BPM</span></label>
+                                <label class="ui-checkbox"><input name="b2b" type="checkbox"
+                                                                  ng-model="servers.b2b"><span>CIP-B2B</span></label>
                             </div>
                         </div>
                     </div>

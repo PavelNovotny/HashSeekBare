@@ -59,17 +59,22 @@
         };
 
         $scope.env={
-            test:false,
+            systest:false,
             predprod:true,
             prod: false
         };
 
         $scope.logs={
             audit: true,
-            time: false,
-            b2b:false,
+            time: false
+        };
+        
+        $scope.servers={
+            esb: true,
+            b2b: false,
             bpm: false
         };
+        
         $scope.lastlogs = false;
 
 
@@ -108,16 +113,27 @@
             }
         });
 
+        $scope.createArray = function(booleanObject) {
+            var result = [];
+            for (var key in booleanObject) {
+                if (booleanObject[key]) {
+                    result.push(key);
+                }
+            }
+            return result;
+        }
+
         $scope.search = function() {
-            var query = $httpParamSerializer({
+            var data = {
                 seekStrings: $scope.seekStrings,
                 date: Data.dt,
                 searchDays: $scope.searchDays.daysTotal,
-                env : $scope.env,
-                logs : $scope.logs,
+                env : $scope.createArray($scope.env),
+                logs : $scope.createArray($scope.logs),
+                servers : $scope.createArray($scope.servers),
                 last : $scope.lastlogs
-            });
-            $http.get('/api/search?'+query)
+            };
+            $http.post('/api/search', data)
                 .success(function (data) {
                     $scope.searchResult = data;
                     console.log(data);

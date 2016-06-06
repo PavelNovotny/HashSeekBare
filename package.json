@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "cors": "^2.7.1",
+    "dateformat": "^1.0.12",
     "express": "^4.13.4",
     "hash-reader": "git+https://github.com/PavelNovotny/hash-reader.git",
     "nconf": "^0.8.4",

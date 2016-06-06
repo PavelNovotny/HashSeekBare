@@ -10,6 +10,7 @@ var app = express();
 var request = require("request");
 var nconf = require('nconf');
 var search = require('./search');
+var bodyParser = require('body-parser');
 
 app.use(cors());
 
@@ -28,7 +29,9 @@ if (nconf.get('env') ==='devel') { //only in development environment
     app.use(express.static(path.join(__dirname, '../.tmp')));
 }
 
-app.get('/api/search', function(req, res) {
+var jsonParser = bodyParser.json();
+
+app.post('/api/search', jsonParser, function(req, res) {
     search.search(req, res, nconf);
 });
 

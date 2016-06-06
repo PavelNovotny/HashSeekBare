@@ -2,22 +2,106 @@
   "proxied-site": "http://lxcipppt401.ux.to2cz.cz:7002",
   "listen-port": 8000,
   "files" : {
-    "test" : {
-      "audit" : {
-        "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
-        "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
+    "systest" : {
+      "folders" : {
+        "esb" : {
+          "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
+          "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
+        },
+        "b2b" : {
+          "data" : "",
+          "hash" : ""
+        },
+        "bpm" : {
+          "data" : "",
+          "hash" : ""
+        }
       },
-      "time" : {
-        "data" : "",
-        "hash" : ""
+      "patterns" : {
+        "esb" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "b2b" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "bpm" : {
+          "audit" : ".log."
+        }
       },
-      "b2b" : {
-        "data" : "",
-        "hash" : ""
+      "nodes" : {
+        "esb" : ["other_s1","other_s2","jms_s1","jms_s2"],
+        "b2b" : ["b2b_s1"],
+        "bpm" : ["cip_bpm_s1","cip_bpm_s1"]
+      }
+    },
+    "predprod" : {
+      "folders" : {
+        "esb" : {
+          "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
+          "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
+        },
+        "b2b" : {
+          "data" : "",
+          "hash" : ""
+        },
+        "bpm" : {
+          "data" : "",
+          "hash" : ""
+        }
       },
-      "bpm" : {
-        "data" : "",
-        "hash" : ""
+      "patterns" : {
+        "esb" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "b2b" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "bpm" : {
+          "audit" : ".log."
+        }
+      },
+      "nodes" : {
+        "esb" : ["other_s1","other_s2","jms_s1","jms_s2"],
+        "b2b" : ["b2b_s1"],
+        "bpm" : ["cip_bpm_s1","cip_bpm_s1"]
+      }
+    },
+    "prod" : {
+      "folders" : {
+        "esb" : {
+          "data" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/",
+          "hash" : "/Users/pavelnovotny/WebstormProjects/data/ciplogs/hash/"
+        },
+        "b2b" : {
+          "data" : "",
+          "hash" : ""
+        },
+        "bpm" : {
+          "data" : "",
+          "hash" : ""
+        }
+      },
+      "patterns" : {
+        "esb" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "b2b" : {
+          "audit" : "_alsb_aspect.audit.",
+          "time" : "_alsb_aspect.time."
+        },
+        "bpm" : {
+          "audit" : ".log."
+        }
+      },
+      "nodes" : {
+        "esb" : ["other_s1","other_s2","jms_s1","jms_s2"],
+        "b2b" : ["b2b_s1"],
+        "bpm" : ["cip_bpm_s1","cip_bpm_s1"]
       }
     }
   }
